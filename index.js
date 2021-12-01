@@ -157,7 +157,6 @@
 
 function rgb(r, g, b) {
   const myArr = [r, g, b];
-  const newArr = [];
   let newString = "";
   for (i = 0; i < myArr.length; i++) {
     if (myArr[i] <= 0) {
