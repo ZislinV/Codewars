@@ -1,3 +1,6 @@
+//////////////////////////////////////////////////
+// Rank8
+//////////////////////////////////////////////////
 // Ex.1
 // Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
 
@@ -147,6 +150,8 @@
 // digPow(92, 1);
 
 //////////////////////////////////////////////////
+// Rank7
+//////////////////////////////////////////////////
 
 // Ex.7
 // The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
@@ -155,21 +160,47 @@
 
 // The following are examples of expected output values:
 
-function rgb(r, g, b) {
-  const myArr = [r, g, b];
-  let newString = "";
-  for (i = 0; i < myArr.length; i++) {
-    if (myArr[i] <= 0) {
-      newString += (0).toString(16) + "0";
-    } else if (myArr[i] > 255) {
-      newString += (255).toString(16);
-    } else if (myArr[i] > 0 && myArr[i] < 16) {
-      newString += "0" + myArr[i].toString(16);
+// function rgb(r, g, b) {
+//   const myArr = [r, g, b];
+//   let newString = "";
+//   for (i = 0; i < myArr.length; i++) {
+//     if (myArr[i] <= 0) {
+//       newString += (0).toString(16) + "0";
+//     } else if (myArr[i] > 255) {
+//       newString += (255).toString(16);
+//     } else if (myArr[i] > 0 && myArr[i] < 16) {
+//       newString += "0" + myArr[i].toString(16);
+//     } else {
+//       newString += myArr[i].toString(16);
+//     }
+//   }
+
+//   return console.log(newString.toUpperCase());
+// }
+// rgb(60, 40, 30);
+
+//////////////////////////////////////////////////
+
+// Ex.8
+
+// Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+const moveZeros = function (arr) {
+  const newArr = [];
+  let n = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      newArr.push(arr[i]);
     } else {
-      newString += myArr[i].toString(16);
+      n++;
     }
   }
+  let j = 0;
+  while (j < n) {
+    newArr.push(0);
+    j++;
+  }
 
-  return console.log(newString.toUpperCase());
-}
-rgb(60, 40, 30);
+  return console.log(newArr);
+};
+moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]);
