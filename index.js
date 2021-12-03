@@ -185,22 +185,44 @@
 
 // Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
 
-const moveZeros = function (arr) {
-  const newArr = [];
-  let n = 0;
+// const moveZeros = function (arr) {
+//   const newArr = [];
+//   let n = 0;
+//   for (i = 0; i < arr.length; i++) {
+//     if (arr[i] !== 0) {
+//       newArr.push(arr[i]);
+//     } else {
+//       n++;
+//     }
+//   }
+//   let j = 0;
+//   while (j < n) {
+//     newArr.push(0);
+//     j++;
+//   }
+
+//   return console.log(newArr);
+// };
+// moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]);
+
+//////////////////////////////////////////////////
+// Rank6
+//////////////////////////////////////////////////
+
+// Ex.9
+// Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+function pigIt(str) {
+  const arr = str.split(" ");
+  console.log(arr);
+  let newArr = [];
   for (i = 0; i < arr.length; i++) {
-    if (arr[i] !== 0) {
+    if (!/[a-z,A-Z]/.test(arr[i])) {
       newArr.push(arr[i]);
     } else {
-      n++;
+      newArr.push(`${arr[i].replace(/^./, "") + arr[i][0] + "ay"}`);
     }
   }
-  let j = 0;
-  while (j < n) {
-    newArr.push(0);
-    j++;
-  }
-
-  return console.log(newArr);
-};
-moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]);
+  return newArr.join(" ").trim();
+}
+console.log(pigIt("Pig latin is cool"));
